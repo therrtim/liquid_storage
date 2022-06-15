@@ -1,5 +1,7 @@
 function key(key_code)
 end
+function tick()
+end
 
 function log(thing)
     api_log('liquid_mod', thing)

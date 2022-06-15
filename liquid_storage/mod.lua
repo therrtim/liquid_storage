@@ -16,7 +16,7 @@ function register()
   -- https://wiki.apico.buzz/wiki/Modding_API#Hooks
   return {
     name = MOD_NAME,
-    hooks = {"key","click"}, -- subscribe to hooks we want so they're called
+    hooks = {"key","click", "tick"}, -- subscribe to hooks we want so they're called
     modules = {"define","scripts","objects"}, -- load other modules we need, in this case "/modules/define.lua" and "/modules/scripts.lua"
   }
 end
@@ -28,11 +28,9 @@ function init()
   api_set_devmode(true)
 --Table to pull canister OID for other functions
   table_canister = {
-    MOD_NAME .. "_canister1900",
-    MOD_NAME .. "_canister1901",
-    MOD_NAME .. "_canister1902",
-    "canister1",
-    "canister2"
+   "canister1900" == MOD_NAME .. "_canister1900",
+   "canister1901" == MOD_NAME .. "_canister1901",
+   "canister1902" ==MOD_NAME .. "_canister1902"
  }
  log("canister table loaded")
   -- log to the console
